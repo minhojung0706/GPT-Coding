@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="나의 관심사와 목표를 소개하는 개인 페이지">
+  <title>나를 소개합니다</title>
+  <style>
+    :root { color-scheme: light; --ink: #202d27; --muted: #65736b; --green: #305b43; --paper: #f7f8f2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif; line-height: 1.7; }
+    a { color: inherit; }
+    .page { max-width: 1080px; margin: auto; padding: 0 32px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 30px 0; border-bottom: 1px solid #dce2d7; }
+    .logo { font-size: 17px; font-weight: 800; text-decoration: none; letter-spacing: -.5px; }
+    nav { display: flex; gap: 24px; font-size: 14px; color: var(--muted); }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--green); }
+    .hero { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 60px; padding: 80px 0 70px; }
+    .eyebrow { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+    h1 { margin: 20px 0; font-size: clamp(36px, 5.3vw, 60px); line-height: 1.25; letter-spacing: -2.5px; font-weight: 750; }
+    h1 span { color: var(--green); }
+    .intro { max-width: 470px; color: var(--muted); font-size: 16px; }
+    .button { display: inline-block; margin-top: 22px; padding: 12px 22px; border-radius: 999px; background: var(--green); color: white; text-decoration: none; font-size: 14px; }
+    .button:hover { background: #244632; }
+    a:focus-visible { outline: 3px solid #9ba951; outline-offset: 5px; }
+    .portrait { position: relative; display: grid; place-items: center; min-height: 340px; border-radius: 160px 160px 24px 24px; background: #e4e9da; overflow: hidden; }
+    .portrait svg { width: 90%; height: 310px; }
+    .portrait-label { position: absolute; bottom: 22px; background: #ffffffdf; padding: 7px 16px; border-radius: 30px; font-size: 12px; color: var(--green); }
+    section { scroll-margin-top: 24px; }
+    .section-title { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
+    .section-title span { color: var(--green); font-size: 12px; font-weight: 700; }
+    h2 { margin: 0; font-size: 23px; letter-spacing: -.8px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 26px; border: 1px solid #dce2d7; border-radius: 18px; background: #fffefa; }
+    .icon { font-size: 24px; }
+    h3 { margin: 14px 0 8px; font-size: 17px; }
+    .card p { margin: 0; font-size: 14px; color: var(--muted); }
+    .contact { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 42px 0; padding: 30px; border-radius: 18px; background: #e9eddf; }
+    .contact p { color: var(--muted); margin: 8px 0 0; font-size: 14px; }
+    .contact .button { margin: 0; white-space: nowrap; }
+    footer { padding: 20px 0 28px; border-top: 1px solid #dce2d7; color: var(--muted); font-size: 12px; }
+    @media (max-width: 700px) {
+      .page { padding: 0 22px; }
+      header { padding: 22px 0; }
+      nav { gap: 16px; font-size: 13px; }
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .portrait { min-height: 260px; max-width: 360px; width: 100%; justify-self: center; }
+      .portrait svg { height: 250px; }
+      .cards { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 이름, 소개 문구, 관심사와 이메일을 본인 정보로 바꿔 주세요. -->
+  <div class="page">
+    <header>
+      <a class="logo" href="#home">나의 작은 공간.</a>
+      <nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#contact">연락</a></nav>
+    </header>
+    <main>
+      <section class="hero" id="home" aria-labelledby="greeting">
+        <div>
+          <div class="eyebrow">HELLO, NICE TO MEET YOU</div>
+          <h1 id="greeting">배우고 만들며<br>성장하는 <span>홍길동</span>입니다.</h1>
+          <p class="intro">새로운 것을 배우는 즐거움과 작은 아이디어를 직접 만들어 보는 경험을 좋아합니다. 매일 조금씩, 나만의 방향으로 나아가고 있습니다.</p>
+          <a class="button" href="#about">조금 더 알아보기 ↗</a>
+        </div>
+        <div class="portrait">
+          <svg viewBox="0 0 320 310" aria-hidden="true">
+            <circle cx="160" cy="145" r="104" fill="#cbd5bc"/>
+            <path d="M59 310c4-81 45-120 101-120s97 39 101 120" fill="#305b43"/>
+            <rect x="142" y="160" width="36" height="52" rx="16" fill="#e6b98d"/>
+            <ellipse cx="160" cy="128" rx="51" ry="61" fill="#f1cca5"/>
+            <path d="M109 131c-9-50 11-80 53-80 44 0 61 37 48 83l-15-34c-22 6-41-1-54-12l-29 43" fill="#29392e"/>
+            <circle cx="142" cy="132" r="3" fill="#29392e"/><circle cx="179" cy="132" r="3" fill="#29392e"/>
+            <path d="M148 153q12 12 24 0" fill="none" stroke="#a3674b" stroke-width="3" stroke-linecap="round"/>
+            <path d="m93 42 6 13 14 2-11 10 2 14-12-7-13 6 3-14-10-10 15-1" fill="#a9b56e"/>
+            <circle cx="256" cy="183" r="8" fill="#a9b56e"/>
+          </svg>
+          <span class="portrait-label">호기심을 일상의 원동력으로 🌱</span>
+        </div>
+      </section>
+      <section id="about" aria-labelledby="about-title">
+        <div class="section-title"><span>01 / ABOUT ME</span><h2 id="about-title">저는 이런 사람입니다</h2></div>
+        <div class="cards">
+          <article class="card"><span class="icon" aria-hidden="true">💡</span><h3>관심 있는 것</h3><p>기술과 디자인, 그리고 일상을 더 편리하게 만드는 아이디어에 관심이 있습니다.</p></article>
+          <article class="card"><span class="icon" aria-hidden="true">🌿</span><h3>소중하게 생각하는 것</h3><p>꾸준함과 솔직한 소통을 중요하게 생각합니다. 함께 배우고 성장하는 과정을 좋아합니다.</p></article>
+          <article class="card"><span class="icon" aria-hidden="true">🚀</span><h3>앞으로의 목표</h3><p>배운 것을 작은 프로젝트로 이어가고, 누군가에게 도움이 되는 결과물을 만들고 싶습니다.</p></article>
+        </div>
+      </section>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div><h2 id="contact-title">반가운 인사를 기다립니다.</h2><p>함께 나누고 싶은 이야기가 있다면 편하게 연락해 주세요.</p></div>
+        <!-- 아래 예시 이메일을 실제 주소로 변경하세요. -->
+        <a class="button" href="mailto:hello@example.com">이메일 보내기 ↗</a>
+      </section>
+    </main>
+    <footer>나의 작은 공간 · 오늘도 한 걸음씩.</footer>
+  </div>
+</body>
+</html>
